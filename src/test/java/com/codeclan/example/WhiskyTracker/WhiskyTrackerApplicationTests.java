@@ -48,4 +48,9 @@ public class WhiskyTrackerApplicationTests {
 		Distillery distillery = new Distillery("Macallan", "Speyside");
 		List<Whisky> anniversaryMalt = whiskyRepository.getWhiskiesFromDistilleryAged(distillery, 25);
 	}
+
+	@Test
+	public void canGetDistilleriesWithWhiskyAged() {
+		List<Distillery> rosebank = distilleryRepository.findDistilleriesWithWhiskyAged(12);
+	}
 }
