@@ -16,17 +16,8 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
 
     @Autowired
     EntityManager entityManager;
-//
-//    @Override
-//    @Transactional
-//    public List<Whisky> getWhiskiesByRegion(String region){
-//        List<Whisky> results = null;
-//        Session session = entityManager.unwrap(Session.class);
-//
-//        Criteria cr = session.createCriteria(Whisky.class);
-//        cr.createAlias("distillery")
-//
-//    }
+
+
 
     @Override
     @Transactional
