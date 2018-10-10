@@ -26,10 +26,10 @@ public class WhiskyController {
     public List<Whisky> getWhiskiesByRegion(@PathVariable String region){
         return whiskyRepository.getWhiskiesByRegion(region);
     }
-//
-//    @GetMapping(value = "/agecheck/{distillery}/{age}")
-//    public List<Whisky> getWhiskiesByDistilleryRegion(@PathVariable Distillery distillery, @PathVariable int age){
-//        return whiskyRepository.getWhiskiesFromDistilleryAged(distillery, age);
-//    }
+
+    @GetMapping(value = "/agecheck/{distillery}/{age}")
+    public List<Whisky> getWhiskiesByDistilleryRegion(@PathVariable String distillery, @PathVariable int age){
+        return whiskyRepository.getWhiskiesFromDistilleryAged(distillery, age);
+    }
 
 }
