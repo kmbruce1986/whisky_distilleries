@@ -28,7 +28,7 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
 
         try {
             Criteria cr = session.createCriteria(Distillery.class);
-            cr.add(Restrictions.eq("region", region));
+            cr.add(Restrictions.eq("region", region).ignoreCase());
             results = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();
@@ -51,7 +51,7 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
             cr.createAlias("whiskies", "whisky");
 //            find whiskies that match the age
             cr.add(Restrictions.eq("whisky.age", age));
-//            return a list with their distillery
+//            return a list with their distillery - this is found because we're in the distillery.class
             results = cr.list();
         } catch (HibernateException e) {
             e.printStackTrace();

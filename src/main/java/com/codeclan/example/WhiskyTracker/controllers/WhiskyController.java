@@ -28,6 +28,7 @@ public class WhiskyController {
     }
 
     @GetMapping(value = "/agecheck/{distillery}/{age}")
+//    if we change the method to take in a distillery id rather than a string of the name, then we will need to amend this too.
     public List<Whisky> getWhiskiesByDistilleryRegion(@PathVariable String distillery, @PathVariable int age){
         return whiskyRepository.getWhiskiesFromDistilleryAged(distillery, age);
     }
